@@ -16,6 +16,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "uuid": "^9.0.0",
+    "vite-plugin-pages": "^0.28.0",
     "vite-plugin-svgr": "^2.4.0"
   },
   "devDependencies": {
