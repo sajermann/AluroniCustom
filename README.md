@@ -1,6 +1,6 @@
 # Aluroni - Custom
 
-Projeto do curso da Alura com modificações.
+Projeto Aluroni do curso da Alura com modificações.
 
 O projeto consiste em criar uma página de cardápio onde o usuário pode filtrar e ordenar os itens.
 
