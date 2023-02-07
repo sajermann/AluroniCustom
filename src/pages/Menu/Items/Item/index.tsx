@@ -1,20 +1,22 @@
 import styles from './index.module.scss';
-import OPTIONS from '../items.json';
-import classNames from 'classnames';
 
-type Props = typeof OPTIONS[0];
+import { TDish } from '~/types/TDish';
+import { Tags } from '~/components/Tags';
+import { useNavigate } from 'react-router-dom';
 
 export function Item({
+  id,
   title,
   description,
   category,
   serving,
   size,
   price,
-  photo
-}: Props) {
+  photo,
+}: TDish) {
+  const navigate = useNavigate();
   return (
-    <div className={styles.item}>
+    <div className={styles.item} onClick={()=>navigate(`/prato/${id}`)}>
       <div className={styles.item__image}>
         <img src={photo} alt={title} />
       </div>
@@ -24,23 +26,7 @@ export function Item({
           <h2>{title}</h2>
           <p>{description}</p>
         </div>
-        <div className={styles.item__tags}>
-          <div
-            className={classNames({
-              [styles.item__type]: true,
-              [styles[`item__type__${category.label.toLowerCase()}`]]: true,
-            })}
-          >
-            {category.label}
-          </div>
-          <div className={styles.item__portion}>{size}g</div>
-          <div className={styles.item__quantityPerson}>
-            Serve {serving} pessoa{serving > 1 && 's'}
-          </div>
-          <div className={styles.item__price}>
-            R$ {price.toFixed(2).replace('.', ',')}
-          </div>
-        </div>
+        <Tags category={category} serving={serving} size={size} price={price} />
       </div>
     </div>
   );

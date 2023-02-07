@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from './index.module.scss';
 import { Item } from './Item';
-import ITEMS from './items.json';
+import ITEMS from '../../../data/items.json';
 
 type Props = {
   search: string;

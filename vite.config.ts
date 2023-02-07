@@ -1,7 +1,9 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import svgr from "vite-plugin-svgr";
-import Pages from "vite-plugin-pages";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import svgr from 'vite-plugin-svgr';
+import Pages from 'vite-plugin-pages';
+import * as path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -24,17 +26,22 @@ export default defineConfig({
       },
 
       //  A minimatch pattern, or array of patterns, which specifies the files in the build the plugin should include. By default all svg files will be included.
-      include: "**/*.svg",
+      include: '**/*.svg',
 
       //  A minimatch pattern, or array of patterns, which specifies the files in the build the plugin should ignore. By default no files are ignored.
-      exclude: "",
+      exclude: '',
     }),
   ],
-  base: "/AluroniCustom/",
+  resolve: {
+    alias: {
+      '~': path.resolve(__dirname, 'src'),
+    },
+  },
+  base: '/AluroniCustom/',
   build: {
     rollupOptions: {
       input: {
-        main: "./index.html",
+        main: './index.html',
       },
     },
   },

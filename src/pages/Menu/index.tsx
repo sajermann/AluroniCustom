@@ -1,37 +1,27 @@
 import { useState } from 'react';
-import { ReactComponent as Logo } from '../../assets/logo.svg';
+
 import { Filters } from './Filters';
-import styles from './index.module.scss';
 import { Items } from './Items';
 import { Order } from './Order';
 import { SearchEngine } from './SearchEngine';
-
+import stylesTheme from '~/styles/_theme.module.scss';
+import styles from './index.module.scss';
 export function Menu() {
   const [search, setSearch] = useState('');
   const [filter, setFilter] = useState<number | null>(null);
   const [order, setOrder] = useState('');
   return (
-    <main>
-      <nav className={styles.menu}>
-        <Logo />
-      </nav>
+    <section className={styles.sectionMenu}>
+      <h3 className={stylesTheme.title}>Cardápio</h3>
+      <SearchEngine search={search} setSearch={setSearch} />
 
-      <header className={styles.header}>
-        <div className={styles.header__text}>A casa do código e da massa</div>
-      </header>
+      <div className={styles.sectionMenu__filters}>
+        <Filters filter={filter} setFilter={setFilter} />
 
-      <section className={styles.sectionMenu}>
-        <h3 className={styles.sectionMenu__title}>Cardápio</h3>
-        <SearchEngine search={search} setSearch={setSearch} />
+        <Order order={order} setOrder={setOrder} />
+      </div>
 
-        <div className={styles.sectionMenu__filters}>
-          <Filters filter={filter} setFilter={setFilter} />
-
-          <Order order={order} setOrder={setOrder} />
-        </div>
-
-        <Items search={search} filter={filter} order={order}  />
-      </section>
-    </main>
+      <Items search={search} filter={filter} order={order} />
+    </section>
   );
 }

@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import { Menu } from './pages/Menu';
+import { AppRouter } from '~/components/Routes';
 import 'normalize.css';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <Menu />
+    <AppRouter />
   </React.StrictMode>
 );
