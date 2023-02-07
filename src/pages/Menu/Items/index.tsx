@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import styles from "./index.module.scss";
-import { Item } from "./Item";
-import ITEMS from "./items.json";
+import { useEffect, useState } from 'react';
+import styles from './index.module.scss';
+import { Item } from './Item';
+import ITEMS from './items.json';
 
 type Props = {
   search: string;
@@ -13,7 +13,7 @@ export function Items({ search, filter, order }: Props) {
   const [list, setList] = useState(ITEMS);
 
   function testSeach(title: string) {
-    const regex = new RegExp(search, "i");
+    const regex = new RegExp(search, 'i');
 
     return regex.test(title);
   }
@@ -26,14 +26,14 @@ export function Items({ search, filter, order }: Props) {
 
   function handleOrder(newList: typeof ITEMS) {
     switch (order) {
-      case "porcao":
-        return newList.sort((a, b) => (a.size > b.size ? 1 : -1));
-      case "qtd_pessoas":
-        return newList.sort((a, b) => (a.serving > b.serving ? 1 : -1));
-      case "preco":
-        return newList.sort((a, b) => (a.price > b.price ? 1 : -1));
-      default:
-        return newList;
+    case 'porcao':
+      return newList.sort((a, b) => (a.size > b.size ? 1 : -1));
+    case 'qtd_pessoas':
+      return newList.sort((a, b) => (a.serving > b.serving ? 1 : -1));
+    case 'preco':
+      return newList.sort((a, b) => (a.price > b.price ? 1 : -1));
+    default:
+      return newList;
     }
   }
 

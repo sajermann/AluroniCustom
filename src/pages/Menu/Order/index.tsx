@@ -1,8 +1,8 @@
-import classNames from "classnames";
-import { Dispatch, SetStateAction, useState } from "react";
-import styles from "./index.module.scss";
-import OPTIONS from "./options.json";
-import { MdKeyboardArrowUp, MdKeyboardArrowDown } from "react-icons/md";
+import classNames from 'classnames';
+import { Dispatch, SetStateAction, useState } from 'react';
+import styles from './index.module.scss';
+import OPTIONS from './options.json';
+import { MdKeyboardArrowUp, MdKeyboardArrowDown } from 'react-icons/md';
 
 type Props = {
   order: string;
@@ -17,12 +17,12 @@ export function Order({ order, setOrder }: Props) {
     <button
       className={classNames({
         [styles.order]: true,
-        [styles["order--active"]]: order !== "",
+        [styles['order--active']]: order !== '',
       })}
       onClick={() => setIsOpened((prev) => !prev)}
       onBlur={() => setIsOpened(false)}
     >
-      <span>{nameOrder || "Ordernar Por"}</span>
+      <span>{nameOrder || 'Ordernar Por'}</span>
       {isOpened ? (
         <MdKeyboardArrowUp size={20} />
       ) : (
@@ -31,7 +31,7 @@ export function Order({ order, setOrder }: Props) {
       <div
         className={classNames({
           [styles.order__options]: true,
-          [styles["order__options--active"]]: isOpened,
+          [styles['order__options--active']]: isOpened,
         })}
       >
         {OPTIONS.map((opt) => (

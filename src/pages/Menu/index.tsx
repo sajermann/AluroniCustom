@@ -1,13 +1,13 @@
-import { useState } from "react";
-import { ReactComponent as Logo } from "../../assets/logo.svg";
-import { Filters } from "./Filters";
-import styles from "./index.module.scss";
-import { Items } from "./Items";
-import { Order } from "./Order";
-import { SearchEngine } from "./SearchEngine";
+import { useState } from 'react';
+import { ReactComponent as Logo } from '../../assets/logo.svg';
+import { Filters } from './Filters';
+import styles from './index.module.scss';
+import { Items } from './Items';
+import { Order } from './Order';
+import { SearchEngine } from './SearchEngine';
 
 export function Menu() {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
   const [filter, setFilter] = useState<number | null>(null);
   const [order, setOrder] = useState('');
   return (

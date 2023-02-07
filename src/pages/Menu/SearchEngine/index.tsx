@@ -1,6 +1,6 @@
-import { Dispatch, SetStateAction } from "react";
-import { CgSearch } from "react-icons/cg";
-import styles from "./index.module.scss";
+import { Dispatch, SetStateAction } from 'react';
+import { CgSearch } from 'react-icons/cg';
+import styles from './index.module.scss';
 
 type Props = {
   search: string;

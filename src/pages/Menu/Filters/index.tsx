@@ -1,8 +1,8 @@
-import { Dispatch, SetStateAction } from "react";
-import classNames from "classnames";
+import { Dispatch, SetStateAction } from 'react';
+import classNames from 'classnames';
 
-import filters from "./filters.json";
-import styles from "./index.module.scss";
+import filters from './filters.json';
+import styles from './index.module.scss';
 
 type TOption = typeof filters[0];
 
@@ -26,7 +26,7 @@ export function Filters({ filter, setFilter }: Props) {
         <button
           className={classNames({
             [styles.filters__filter]: true,
-            [styles["filters__filter--active"]]: filter === filterTemp.id,
+            [styles['filters__filter--active']]: filter === filterTemp.id,
           })}
           key={filterTemp.id}
           onClick={() => selectFilter(filterTemp)}

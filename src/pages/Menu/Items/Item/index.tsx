@@ -1,7 +1,6 @@
-import styles from "./index.module.scss";
-import logo from "../../../../assets/logo.svg";
-import OPTIONS from "../items.json";
-import classNames from "classnames";
+import styles from './index.module.scss';
+import OPTIONS from '../items.json';
+import classNames from 'classnames';
 
 type Props = typeof OPTIONS[0];
 
@@ -36,10 +35,10 @@ export function Item({
           </div>
           <div className={styles.item__portion}>{size}g</div>
           <div className={styles.item__quantityPerson}>
-            Serve {serving} pessoa{serving > 1 && "s"}
+            Serve {serving} pessoa{serving > 1 && 's'}
           </div>
           <div className={styles.item__price}>
-            R$ {price.toFixed(2).replace(".", ",")}
+            R$ {price.toFixed(2).replace('.', ',')}
           </div>
         </div>
       </div>
