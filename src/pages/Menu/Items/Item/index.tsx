@@ -3,8 +3,10 @@ import styles from './index.module.scss';
 import { TDish } from '~/types/TDish';
 import { Tags } from '~/components/Tags';
 import { useNavigate } from 'react-router-dom';
+import { memo } from 'react';
 
-export function Item({
+function ItemPage({
+// export function Item({
   id,
   title,
   description,
@@ -15,6 +17,7 @@ export function Item({
   photo,
 }: TDish) {
   const navigate = useNavigate();
+  id === 1 && console.log(title);
   return (
     <div className={styles.item} onClick={()=>navigate(`/prato/${id}`)}>
       <div className={styles.item__image}>
@@ -31,3 +34,5 @@ export function Item({
     </div>
   );
 }
+
+export const Item = memo(ItemPage);

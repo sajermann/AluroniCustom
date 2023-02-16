@@ -2,8 +2,10 @@ import { useParams, useNavigate } from 'react-router-dom';
 import OPTIONS from '~/data/items.json';
 import styles from './index.module.scss';
 import { Tags } from '~/components/Tags';
-import { NotFound } from '../NotFound';
 import { MainPage } from '~/components/MainPage';
+import { lazy } from 'react';
+
+const NotFound = lazy(()=> import('~/pages/NotFound').then(({NotFound})=>({ default: NotFound })));
 
 export function Dish() {
   const { id } = useParams();

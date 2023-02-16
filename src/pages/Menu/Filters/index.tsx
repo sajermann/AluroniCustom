@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, memo, SetStateAction } from 'react';
 import classNames from 'classnames';
 
 import filters from './filters.json';
@@ -11,7 +11,7 @@ type Props = {
   setFilter: Dispatch<SetStateAction<number | null>>;
 };
 
-export function Filters({ filter, setFilter }: Props) {
+function FiltersPage({ filter, setFilter }: Props) {
   function selectFilter(option: TOption) {
     if (filter === option.id) {
       setFilter(null);
@@ -37,3 +37,5 @@ export function Filters({ filter, setFilter }: Props) {
     </div>
   );
 }
+
+export const Filters = memo(FiltersPage);

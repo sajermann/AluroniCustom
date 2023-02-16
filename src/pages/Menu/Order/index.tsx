@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, memo, SetStateAction, useState } from 'react';
 import styles from './index.module.scss';
 import OPTIONS from './options.json';
 import { MdKeyboardArrowUp, MdKeyboardArrowDown } from 'react-icons/md';
@@ -8,7 +8,7 @@ type Props = {
   order: string;
   setOrder: Dispatch<SetStateAction<string>>;
 };
-export function Order({ order, setOrder }: Props) {
+function OrderComponent({ order, setOrder }: Props) {
   const [isOpened, setIsOpened] = useState(false);
 
   const nameOrder = order && OPTIONS.find((opt) => opt.value === order)?.nome;
@@ -47,3 +47,5 @@ export function Order({ order, setOrder }: Props) {
     </button>
   );
 }
+
+export const Order = memo(OrderComponent);
