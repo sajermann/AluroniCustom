@@ -3,9 +3,7 @@ import OPTIONS from '~/data/items.json';
 import styles from './index.module.scss';
 import { Tags } from '~/components/Tags';
 import { MainPage } from '~/components/MainPage';
-import { lazy } from 'react';
-
-const NotFound = lazy(()=> import('~/pages/NotFound').then(({NotFound})=>({ default: NotFound })));
+import { NotFound } from '../NotFound';
 
 export function Dish() {
   const { id } = useParams();
