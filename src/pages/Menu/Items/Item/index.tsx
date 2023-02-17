@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 import { memo } from 'react';
 
 function ItemPage({
-// export function Item({
   id,
   title,
   description,
@@ -17,7 +16,7 @@ function ItemPage({
   photo,
 }: TDish) {
   const navigate = useNavigate();
-  id === 1 && console.log(title);
+
   return (
     <div className={styles.item} onClick={()=>navigate(`/prato/${id}`)}>
       <div className={styles.item__image}>
